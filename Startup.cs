@@ -1,7 +1,9 @@
+using CCMSAPI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +34,12 @@ namespace CCMSAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CCMSAPI", Version = "v1" });
             });
+
+            services.AddDbContext<AuthenticationContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("CCMSConnection")));
+
+            services.AddDefaultIdentity<User>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +51,7 @@ namespace CCMSAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CCMSAPI v1"));
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
