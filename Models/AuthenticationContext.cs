@@ -13,6 +13,6 @@ namespace CCMSAPI.Models
         {
 
         }
-        public DbSet<User> Users { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
