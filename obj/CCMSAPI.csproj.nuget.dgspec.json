@@ -10,15 +10,11 @@
         "projectUniqueName": "D:\\self-push\\Credit Card Managerment System(CCMS)\\CCMSAPI\\CCMSAPI.csproj",
         "projectName": "CCMSAPI",
         "projectPath": "D:\\self-push\\Credit Card Managerment System(CCMS)\\CCMSAPI\\CCMSAPI.csproj",
-        "packagesPath": "C:\\Users\\徐冠智\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\calaw\\.nuget\\packages\\",
         "outputPath": "D:\\self-push\\Credit Card Managerment System(CCMS)\\CCMSAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\徐冠智\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\calaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
