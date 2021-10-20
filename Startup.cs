@@ -32,6 +32,8 @@ namespace CCMSAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Inject AppSettings
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
 
 
             services.AddControllers();
@@ -60,7 +62,7 @@ namespace CCMSAPI
             //新增跨站請求服務
             services.AddCors();
 
-            //Jwt Authentication
+            //Jwt Authentication JsonWebToken 登入驗證實作
 
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString());
 
@@ -73,7 +75,7 @@ namespace CCMSAPI
             {
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = false;
-                x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
