@@ -36,6 +36,7 @@ namespace CCMSAPI
             services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
 
 
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
