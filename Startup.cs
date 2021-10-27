@@ -119,6 +119,7 @@ namespace CCMSAPI
 
             app.UseRouting();
 
+            //±ÂÅv
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

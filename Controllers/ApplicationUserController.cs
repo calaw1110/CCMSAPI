@@ -68,7 +68,7 @@ namespace CCMSAPI.Controllers
                     {
                        new Claim("UserID",user.Id.ToString())
                     }),
-                    //時效長度
+                    //token 有效時間
                     Expires = DateTime.UtcNow.AddDays(1),
                     //建立簽證 
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
